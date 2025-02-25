@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/778060b9ca.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "0-8mynQsx7dyMDOpO",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section class="pages">
+        <nav class="nav">
+            <img src="edu_images/logo.png" alt="logo">
+         <div class="navLinks" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" target="_blank">ABOUT</a></li>
+                <li><a href="course.html" target="_blank">COURSE</a></li>
+                <li><a href="blog.html" target="_blank">BLOG</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+         </div>
+         <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+         <div class="textbox">
+            <h2>Contact Us</h2>
+         </div>
+        
+    </section>
+    <!--location-->
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.0639383957623!2d-0.2117930243023159!3d5.703903194277926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d64795b5e7d%3A0xddb626ccb20e78a8!2sSamat%20Apartment%20B!5e0!3m2!1sen!2sgh!4v1740160345756!5m2!1sen!2sgh" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <!--contact form-->
+    <section class="contactForm">
+        <div class="row">
+            <div class="contactCol">
+                <i class="fa-solid fa-house"></i>
+            <span>
+                <h5>Address</h5>
+                <p>Eduford, Agbogba <br>
+                    P.O Box 123 <br>
+                    Accra
+                </p>
+            </span>    
+            </div>
+
+        <div class="contactCol">
+            <i class="fa-solid fa-phone"></i>
+        <span>
+                <h5>+233244675886</h5>
+                <p>Monday to Sunday</p>
+        </span>
+        </div>
+
+        <div class="contactCol">
+            <i class="fa-solid fa-envelope"></i>
+        <span>
+            <h5>eduford@edu.com</h5>
+            <p>Contact us 6am-11pm</p>
+        </span>    
+        </div>
+        </div>
+
+        <div class="contactCol">
+        <form action="">
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <textarea placeholder="Message" name="name" message="message" required></textarea>
+            <button type="submit" onclick="send()">Submit</button>
+        </form>
+    </div>
+</div>     
+</section>
+
+
+    <!--footer-->
+    <section class="footer">
+        <p> &copy;2025 Eduford. All Rights Reserved</p>
+        <div class="social">
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </section>
+
+    <script>
+        var menu = document.getElementById("navLinks");
+        if(window.matchMedia("(min-width: 700px)").matches) {
+            menu.style.display = "block"; //Show menu
+        }else{ 
+            menu.style.display = "none"; //hide menu
+        }
+            function showMenu() {
+                document.querySelector('.navLinks').style.display = "block";
+            }
+            function hideMenu() { 
+                document.querySelector('.navLinks').style.display = "none";
+            }
+    </script>
+
+    <script src="js/js.js">
+        var menu = document.getElementById("navLinks");
+        if(window.matchMedia("(min-width: 700px)").matches) {
+            menu.style.display = "block"; //Show menu
+        }else{ 
+            menu.style.display = "none"; //hide menu
+        }
+            function showMenu() {
+                document.querySelector('.navLinks').style.display = "block";
+            }
+            function hideMenu() { 
+                document.querySelector('.navLinks').style.display = "none";
+            }
+    </script>
+
+function send() {
+    var templateParams = {
+        
+      };
+      
+      emailjs.send('service_q5ocyzp', 'template_4a2sqqk', templateParams).then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
+    }
+
+    
+</body>
+</html>
